@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letícia Silvestre - Bio Instagram | Nutricionista Comportamental</title>
+    <meta name="description" content="Letícia Silvestre - Nutricionista Comportamental. Transforme sua relação com a comida sem dietas restritivas. Maringá-PR e Online.">
+    <link rel="icon" type="image/png" href="logoleticia.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --sage: #a8b5a0;
+            --lavanda: #ADA0B5;
+            --branco: #fefefe;
+            --cinza-suave: #f8f8f8;
+            --cinza-escuro: #2c2c2c;
+            --verde-suave: #8FA48F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background: var(--cinza-suave);
+        }
+
+        .bio-container {
+            max-width: 100vw;
+            width: 100%;
+            overflow: hidden;
+            background: transparent;
+            border-radius: 0;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            height: 200px;
+            width: 100vw;
+            background-image: url('fotocapa.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .header-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-photo {
+            display: none;
+        }
+
+        .profile-photo-container {
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center -20px;
+            transform: scale(1.3);
+        }
+
+        .profile-section .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--cinza-escuro);
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .profile-section .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--cinza-escuro);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            opacity: 0.8;
+        }
+
+        .tagline .plant-icon {
+            font-size: 1rem;
+        }
+
+        /* Social Icons */
+        .profile-section .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-2px);
+        }
+
+        .profile-section .social-icon i {
+            color: var(--sage);
+            font-size: 1.4rem;
+        }
+
+        /* Buttons Section */
+        .buttons-section {
+            background: transparent;
+            padding: 0 20px 30px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Profile section below banner */
+        .profile-section {
+            padding: 60px 20px 30px;
+            text-align: center;
+            background: transparent;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .profile-section .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--branco);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            margin: 0 auto 20px;
+            display: block;
+            margin-top: -120px;
+        }
+
+        .profile-section .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 8px;
+            transform: scale(1.3);
+        }
+
+        .link-button {
+            display: block;
+            width: 100%;
+            background: var(--verde-suave);
+            color: var(--branco);
+            text-decoration: none;
+            padding: 16px 24px;
+            margin-bottom: 12px;
+            border-radius: 50px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(143, 164, 143, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(143, 164, 143, 0.35);
+            background: var(--sage);
+        }
+
+        .link-button:active {
+            transform: translateY(0);
+        }
+
+        .link-button .icon {
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 30px 30px;
+            border-top: 1px solid rgba(168, 181, 160, 0.1);
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--cinza-escuro);
+            font-weight: 300;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--sage);
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .bio-container {
+                max-width: 100vw;
+            }
+            
+            .header-section {
+                height: 300px;
+            }
+            
+            .profile-section {
+                max-width: 500px;
+                padding: 80px 30px 40px;
+            }
+            
+            .profile-section .profile-photo {
+                margin-top: -100px;
+            }
+            
+            .buttons-section {
+                max-width: 500px;
+                padding: 0 30px 40px;
+            }
+            
+            .link-button {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 360px) {
+            .bio-container {
+                max-width: 100%;
+                margin: 0 5px;
+            }
+
+            .header-section {
+                padding: 30px 20px 25px;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            .name {
+                font-size: 1.7rem;
+            }
+
+            .tagline {
+                font-size: 0.8rem;
+                margin-bottom: 25px;
+            }
+
+            .buttons-section {
+                padding: 25px 20px 15px;
+            }
+
+            .link-button {
+                padding: 14px 20px;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-icon i {
+                font-size: 1rem;
+            }
+        }
+
+
+        /* Animations */
+        .bio-container {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-photo {
+            animation: fadeInScale 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .name {
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .tagline {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .social-icons {
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .link-button {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .link-button:nth-child(1) { animation-delay: 0.6s; }
+        .link-button:nth-child(2) { animation-delay: 0.7s; }
+        .link-button:nth-child(3) { animation-delay: 0.8s; }
+        .link-button:nth-child(4) { animation-delay: 0.9s; }
+        .link-button:nth-child(5) { animation-delay: 1.0s; }
+        .link-button:nth-child(6) { animation-delay: 1.1s; }
+        .link-button:nth-child(7) { animation-delay: 1.2s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bio-container">
+        <!-- Header Section - Banner -->
+        <div class="header-section">
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="fotosobre.jpg" alt="Letícia Silvestre - Nutricionista Comportamental">
+            </div>
+            
+            <h1 class="name">Letícia Silvestre</h1>
+            <div class="tagline">
+                <span>Nutricionista Comportamental</span>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://instagram.com/nutrileticiasilvestre" class="social-icon" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/5544999604891?text=Olá! Vim do Instagram" class="social-icon" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:nutrileticiasilvestre@gmail.com" class="social-icon" target="_blank" rel="noopener">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Buttons Section - Área Branca Inferior -->
+        <div class="buttons-section">
+            <a href="https://leticiasilvestre.com.br/" class="link-button" target="_blank" rel="noopener">
+                Site oficial
+            </a>
+
+            <a href="https://wa.me/5544999604891?text=Olá! Quero agendar minha consulta" class="link-button" target="_blank" rel="noopener">
+                Agende sua consulta
+            </a>
+
+            <a href="https://maps.app.goo.gl/H3HPmVJMMU1cNsMf9?g_st=iwb" class="link-button" target="_blank" rel="noopener">
+                Como chegar ao consultório
+            </a>
+
+            <a href="https://pay.kiwify.com.br/3srnIx6?fbclid=PAVERFWAQJXIZleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadFUJEfXUSa6IOD7i__aUhh_8_tHErnCgeO-ZFjA4l6frOOWzOQEXJwL453xQ_aem_OynXVV4U0JjNghJ8h1rM_Q" class="link-button" target="_blank" rel="noopener">
+                Adquira meu e-book
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text">Maringá-PR • Atendimento Online para todo Brasil</p>
+            <p class="footer-text" style="font-size: 0.7rem; margin-bottom: 15px;">CRN8 19463</p>
+            <img src="logoleticia.png" alt="Logo Letícia" style="height: 25px; width: auto;">
+        </div>
+    </div>
+
+    <script>
+        // Enhanced touch feedback for mobile
+        document.querySelectorAll('.link-button, .social-icon').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            
+            element.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Add click handlers for placeholder links
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Button clicked:', this.textContent.trim());
+            });
+        });
+
+    </script>
+</body>
+</html>
